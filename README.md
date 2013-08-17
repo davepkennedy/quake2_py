@@ -1,4 +1,3 @@
 quake2_py
-=========
 
-Because I can
+Port of Quake 2 by Fruitz of Dojo with added Python hooks
