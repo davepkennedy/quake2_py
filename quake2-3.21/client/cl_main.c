@@ -20,6 +20,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 // cl_main.c  -- client main loop
 
 #include "client.h"
+#include "quake2py.h"
 
 cvar_t	*freelook;
 
@@ -1810,6 +1811,8 @@ void CL_Init (void)
 	CDAudio_Init ();
 	CL_InitLocal ();
 	IN_Init ();
+    
+    Python_Init();
 
 //	Cbuf_AddText ("exec autoexec.cfg\n");
 	FS_ExecAutoexec ();

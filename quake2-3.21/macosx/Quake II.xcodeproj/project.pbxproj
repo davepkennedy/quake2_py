@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		550CFA9317C01ABF0088301C /* Python.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 550CFA9217C01ABF0088301C /* Python.framework */; };
+		550CFA9617C0257E0088301C /* consoleio.c in Sources */ = {isa = PBXBuildFile; fileRef = 550CFA9517C0257E0088301C /* consoleio.c */; };
+		550CFA9817C1667A0088301C /* quake2py.c in Sources */ = {isa = PBXBuildFile; fileRef = 550CFA9717C1667A0088301C /* quake2py.c */; };
 		5564ADC41752BB70003790AF /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5564ADC31752BB70003790AF /* QTKit.framework */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -483,6 +486,10 @@
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		550CFA9217C01ABF0088301C /* Python.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Python.framework; path = System/Library/Frameworks/Python.framework; sourceTree = SDKROOT; };
+		550CFA9517C0257E0088301C /* consoleio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = consoleio.c; sourceTree = "<group>"; };
+		550CFA9717C1667A0088301C /* quake2py.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = quake2py.c; sourceTree = "<group>"; };
+		550CFA9917C2AD190088301C /* quake2py.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = quake2py.h; sourceTree = "<group>"; };
 		5564ADC31752BB70003790AF /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = System/Library/Frameworks/QTKit.framework; sourceTree = SDKROOT; };
 		8D1107320486CEB800E47090 /* Quake II.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quake II.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D22A791A09F3CEFE00FC9B21 /* q2toc.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = q2toc.jpg; sourceTree = "<group>"; };
@@ -794,6 +801,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				550CFA9317C01ABF0088301C /* Python.framework in Frameworks */,
 				5564ADC41752BB70003790AF /* QTKit.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				D23874DB09E1BD9F00C1E540 /* ApplicationServices.framework in Frameworks */,
@@ -846,6 +854,7 @@
 		080E96DDFE201D6D7F000001 /* Sourcecode */ = {
 			isa = PBXGroup;
 			children = (
+				550CFA9417C01B3D0088301C /* Python */,
 				D238710109E1A28E00C1E540 /* Application */,
 				D238711509E1A32000C1E540 /* Common */,
 				D238711809E1A33C00C1E540 /* Game Modules */,
@@ -858,6 +867,8 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				550CFA9217C01ABF0088301C /* Python.framework */,
+				5564ADC31752BB70003790AF /* QTKit.framework */,
 				D23874DA09E1BD9F00C1E540 /* ApplicationServices.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 				D23874E909E1BDB800C1E540 /* CoreAudio.framework */,
@@ -893,7 +904,6 @@
 		29B97314FDCFA39411CA2CEA /* Quake II */ = {
 			isa = PBXGroup;
 			children = (
-				5564ADC31752BB70003790AF /* QTKit.framework */,
 				080E96DDFE201D6D7F000001 /* Sourcecode */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -929,6 +939,17 @@
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		550CFA9417C01B3D0088301C /* Python */ = {
+			isa = PBXGroup;
+			children = (
+				550CFA9517C0257E0088301C /* consoleio.c */,
+				550CFA9717C1667A0088301C /* quake2py.c */,
+				550CFA9917C2AD190088301C /* quake2py.h */,
+			);
+			name = Python;
+			path = ../python;
 			sourceTree = "<group>";
 		};
 		D22A791309F3CED800FC9B21 /* Help */ = {
@@ -1831,6 +1852,8 @@
 				D238795309E1DAB600C1E540 /* Quake2.m in Sources */,
 				D238795509E1DAB600C1E540 /* Quake2Application.m in Sources */,
 				D235F7DD09F0261300462FE6 /* Quake2Toolbar.m in Sources */,
+				550CFA9617C0257E0088301C /* consoleio.c in Sources */,
+				550CFA9817C1667A0088301C /* quake2py.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
